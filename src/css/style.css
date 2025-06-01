@@ -18,7 +18,7 @@
     background-image: radial-gradient(#4874b0, #053371);
 }
 
-.menu{
+.menu {
     display: flex;
     flex-direction: column;
     font-size: 0.8rem;
@@ -30,31 +30,28 @@
     padding-bottom: 0px;
     width: fit-content;
     height: auto;
-    animation-name: menuanimation;
 }
 
-.menu ul{
+.menu ul {
     display: block;
     flex-direction: column;
     margin: 0;
     padding: 0;
 }
-.menu li{
+
+.menu li {
     height: 2px;
     width: 30px;
     background-color: white;
     border-radius: 5px;
 }
-.menu li:first-child{
+
+.menu li:first-child {
     margin-bottom: 5px;
 }
-.menu li:last-child{
-    margin-top: 5px;
-}
 
-.menu:hover{
-    transform: scale(1.1);
-    
+.menu li:last-child {
+    margin-top: 5px;
 }
 
 .navbar ul {
@@ -67,7 +64,38 @@
     padding-bottom: 10px;
 }
 
-.navbar img{
+#menubtn {
+    background-color: #053371;
+    border-color: white;
+}
+
+.displaymenu {
+    display: none;
+    background-color: #053371;
+    width: 10%;
+    height: auto;
+    align-content: center;
+    justify-content: center;
+    position: fixed;
+    margin-left: 100px;
+    margin-top: 50px;
+
+}
+
+.displaymenu ul {
+    width: 100%;
+}
+
+.displaymenu li {
+    list-style: none;
+    color: antiquewhite;
+    border: 2px solid;
+    border-color: #4874b0;
+    text-align: center;
+
+}
+
+.navbar img {
     width: 4%;
     height: auto;
 }
@@ -84,13 +112,13 @@
 }
 
 main {
-   display: flex;
-   flex-wrap: wrap;
-   padding-right: 200px;
-   padding-left: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 200px;
+    padding-left: 200px;
 }
 
-.secao{
+.secao {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -102,30 +130,34 @@ main {
     border-radius: 10px;
     margin-top: 70px;
 }
-.primeirasecao{
+
+.primeirasecao {
     margin-top: 0px;
 }
-.texto{
+
+.texto {
     width: 100%;
     margin-left: 10px;
     margin-right: 10px;
 }
 
-.texto p{
+.texto p {
     margin-top: 10px;
 }
-.secao h2{
+
+.secao h2 {
     font-size: 20px;
     color: antiquewhite;
     margin-bottom: 10px;
     font-weight: bolder;
 }
-.secao h2 .gradient{
+
+.secao h2 .gradient {
     padding: 10px;
     border-radius: 5px;
 }
 
-.secao img{
+.secao img {
     width: 50%;
     height: auto;
 }
