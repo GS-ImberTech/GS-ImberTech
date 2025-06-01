@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat';
+}
+
+.navbar {
+    color: antiquewhite;
+    font-size: 30px;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.gradient {
+    background-image: radial-gradient(#4874b0, #053371);
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    font-weight: 900;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+}
+
+.logo img {
+    width: 20%;
+    height: auto;
+}
+
+main {
+   display: flex;
+   flex-wrap: wrap;
+   padding-right: 200px;
+   padding-left: 200px;
+}
+
+.secao{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+    border: solid, 2px;
+    padding: 10px;
+    border-color: #053371;
+    border-radius: 10px;
+    margin-top: 70px;
+}
+.primeirasecao{
+    margin-top: 0px;
+}
+.texto{
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.texto p{
+    margin-top: 10px;
+}
+.secao h2{
+    font-size: 20px;
+    color: antiquewhite;
+    margin-bottom: 10px;
+    font-weight: bolder;
+}
+.secao h2 .gradient{
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.secao img{
+    width: 50%;
+    height: auto;
+}
