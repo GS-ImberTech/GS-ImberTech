@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat';
+}
+
+.navbar {
+    color: antiquewhite;
+    font-size: 30px;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.gradient {
+    background-image: radial-gradient(#4874b0, #053371);
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    font-weight: 900;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+}
+
+.logo img {
+    width: 20%;
+    height: auto;
+}
+
+main {
+   display: flex;
+   flex-wrap: wrap;
+   padding-right: 40px;
+   padding-left: 40px;
+}
+
+.secao{
+    text-align: center;
+}
