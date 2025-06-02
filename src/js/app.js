@@ -159,3 +159,27 @@ nextButton.addEventListener("click", () => {
 })
 
 startQuiz();
+
+// Mudança de fundo
+let lightTheme = document.getElementById("claro");
+let darkTheme = document.getElementById("escuro");
+let greyTheme = document.getElementById("cinza");
+
+lightTheme.addEventListener("click", changeBackgroundWhite);
+darkTheme.addEventListener("click", changeBackgroundBlack);
+greyTheme.addEventListener("click", changeBackgroundGrey);
+
+function changeBackgroundWhite() {
+    document.body.style.backgroundColor = "white";
+}
+
+function changeBackgroundBlack() {
+    document.body.style.backgroundColor = "black";
+}
+
+function changeBackgroundGrey() {
+    document.body.style.backgroundColor = "grey";
+}
+
+
+
