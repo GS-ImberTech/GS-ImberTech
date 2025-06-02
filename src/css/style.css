@@ -285,7 +285,12 @@ footer a:visited {
 
 @media (max-width: 600px) {
     .slidebox{
-        height:120px;
+        height:110px;
+        margin-bottom: 10px;
+        transition-duration: 1s;
+    }
+    .slidebox:hover{
+        transform: scale(2.0);
     }
 }
 
