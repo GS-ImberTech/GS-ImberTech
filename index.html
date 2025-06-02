@@ -53,48 +53,27 @@
         <h1>Decisões inteligentes começam com dados precisos</h1>
     </header>
 
-    <div class="slider">
-        <div class="slides">
-            <input type="radio" name="radio-btn" id="radio1">
-            <input type="radio" name="radio-btn" id="radio2">
-            <input type="radio" name="radio-btn" id="radio3">
-
-            <div class="slide first">
-                <img src="src/assets/imgs/slide1.jpg" alt="Imagem1">
-            </div>
-            <div class="slide">
-                <img src="src/assets/imgs/slide2.jpg" alt="Imagem2">
-            </div>
-            <div class="slide">
-                <img src="src/assets/imgs/slide3.jpg" alt="Imagem3">
-            </div>
-
-            <div class="navigation-auto">
-                <div class="auto-btn1"></div>
-                <div class="auto-btn2"></div>
-                <div class="auto-btn3"></div>
-            </div>
-        </div>
-
-        <div class="manual-navigation">
-            <label for="radio1" class="manual-btn"></label>
-            <label for="radio2" class="manual-btn"></label>
-            <label for="radio3" class="manual-btn"></label>
-        </div>
-    </div>
-
-    <br><br>
 
     <main>
         <article class="secao primeirasecao">
             <h2>
-                <div class="gradient" id="enchentes">Enchentes no Brasil</div>
+                <div class="gradient" id="enchentes"> Enchentes no Brasil</div>
             </h2>
             <div class="texto">
+                <div class="slidebox">
+                    <div class="slider">
+                        <img src="src/assets/imgs/slide1.jpg" alt="Enchente Extrema" class="slide active">
+                        <img src="src/assets/imgs/slide2.jpg" alt="Enchente Extrema" class="slide">
+                        <img src="src/assets/imgs/slide3.jpg" alt="Enchente Extrema" class="slide">
+                    </div>
+                </div>
+                <button class="slidebtn" id="btnPrev">ᐊ</button>
+                <button class="slidebtn" id="btnNext">ᐅ</button>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, inventore maxime! Beatae, quibusdam
                     adipisci aperiam id dignissimos quae alias incidunt.</p>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos eaque fugiat doloribus tempore
                     nulla laborum quod itaque consequatur, libero minus?</p>
+            </div>
             </div>
         </article>
 
@@ -187,7 +166,6 @@
             <li>© 2025 Imber Tech - Todos os direitos reservados.</li>
         </ul>
     </footer>
-
     <script src="src/js/app.js"></script>
 </body>
 

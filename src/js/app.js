@@ -19,22 +19,37 @@ menuClick.addEventListener('click', function (event){
 
 // SLIDER
 
-let contagem = 0
-document.getElementById("radio1").checked = true;
-const totalSlide = document.querySelectorAll(".slide");
+let slideAtual = 0;
+const slides = document.querySelectorAll(".slide");
+const totalSlides = slides.length;
 
-setInterval(function(){
+const btnNext = document.getElementById("btnNext");
+const btnPrev = document.getElementById("btnPrev");
+
+btnNext.addEventListener('click', function() {
     nextSlide();
-}, 2000);
+});
 
-function nextSlide(){
-    contagem = contagem + 1;
-    if( contagem > totalSlide.length){
-        contagem = 0;
-    }
-    document.getElementById("radio" + contagem).checked = true;
+btnPrev.addEventListener('click', function() {
+    prevSlide();
+});
+
+function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[index].classList.add('active');
 }
 
+function nextSlide() {
+    slideAtual = (slideAtual + 1) % totalSlides;
+    showSlide(slideAtual);
+}
+
+function prevSlide() {
+    slideAtual = (slideAtual - 1 + totalSlides) % totalSlides;
+    showSlide(slideAtual);
+}
+
+setInterval(nextSlide, 5000)
 // QUIZ
 const questions = [
    {
