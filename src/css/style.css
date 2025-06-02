@@ -80,6 +80,11 @@ html {
     border-color: white;
     border: none;
     box-shadow: none;
+    transition-duration: 500ms;
+}
+
+#menubtn:hover{
+    transform: scale(1.1);
 }
 
 .displaymenu {
@@ -126,10 +131,21 @@ html {
     transform: scale(1.05);
 }
 
-.navbar img {
-    width: 4%;
-    height: auto;
+.navbar .homelogo{
+    display: flex;
+    width: 40px;
+    height: 40px;
 }
+
+.navbar img {
+    width: fit-content;
+    transition-duration: 500ms;
+}
+
+.navbar img:hover{
+    transform: scale(1.3);
+}
+
 
 .logo {
     display: flex;
