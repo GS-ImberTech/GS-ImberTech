@@ -130,6 +130,9 @@ html {
 .displaymenu li:hover {
     transform: scale(1.05);
 }
+.displaymenu li:first-child:hover {
+    transform: none;
+}
 
 .navbar .homelogo{
     display: flex;
