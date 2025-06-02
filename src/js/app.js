@@ -15,9 +15,6 @@ menuClick.addEventListener('click', function (event){
     show.showdisplay = true
     }
 
-<<<<<<< Updated upstream
-})
-=======
 })
 
 // SLIDER
@@ -53,5 +50,3 @@ function prevSlide() {
 }
 
 // Automático
-setInterval(nextSlide, 7000)
->>>>>>> Stashed changes
