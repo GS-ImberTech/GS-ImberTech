@@ -50,3 +50,5 @@ function prevSlide() {
 }
 
 // Automático
+setInterval(nextSlide, 5000)
+

@@ -261,7 +261,6 @@ footer a:visited {
 }
 
 /* SLIDER */
-
 .sidebox{
     display: flex;
     position: relative;
@@ -282,7 +281,6 @@ footer a:visited {
     justify-content: center;
     margin: 5px;
 }
-
 .slide {
     position: absolute;
     width: 100%;
@@ -308,3 +306,5 @@ footer a:visited {
     margin-bottom: 5px;
     font-size: 15px;
 }
+
+
