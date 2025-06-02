@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1023cb5a0c.js" crossorigin="anonymous"></script>
     <title>Imber Tech</title>
 </head>
 <body>
@@ -26,7 +27,7 @@
             </button>
  
                 <li>Global Solution</li>
-                <img src="src/assets/imgs/home-logo.png" alt="Ícone de home">
+                <i class="fa-solid fa-house"></i>
             </ul>
         </div>
     </nav>
@@ -39,6 +40,8 @@
             <li><a href="#publicoAlvo">Público-Alvo</a></li>
             <li><a href="#beneficios">Benefícios</a></li>
             <li><a href="#usoDiario">Uso Diário</a></li>
+            <li><a href="#quiz">Teste seu Conhecimento</a></li>
+            <li id="temas"> Temas: </li>
         </ul>
     </div>
     <header class="logo">
@@ -148,6 +151,27 @@
                     nulla laborum quod itaque consequatur, libero minus?</p>
             </div>
         </article>
+        <br><br>
+        
+        <div class="secao" id="quiz">
+
+            <div class="app">  
+
+                <h2>
+                   <div class="gradient">TESTE SEU CONHECIMENTO</div> 
+                </h2>
+                <div class="quiz">
+                    <h2 id="question">Pergunta</h2>
+                    <div id="answer-buttons">
+                        <button class="btn">Resposta1</button>
+                        <button class="btn">Resposta2</button>
+                        <button class="btn">Resposta3</button>
+                        <button class="btn">Resposta4</button>
+                    </div>
+                    <button id="next-btn">Próxima</button>
+                </div>
+            </div>
+        </div>
     </main>
     <footer> 
         <ul>
