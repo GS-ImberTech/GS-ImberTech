@@ -81,7 +81,7 @@ html {
 }
 
 #menubtn {
-    background-color: #053371;
+    background-color: #083d83;
     border-color: white;
     border: none;
     box-shadow: none;
@@ -94,7 +94,7 @@ html {
 
 .displaymenu {
     display: none;
-    background-color: #053371;
+    background-color: #14488b;
     border: 2px solid;
     width: auto;
     height: auto;
@@ -433,7 +433,6 @@ footer a:visited {
 
 .quiz h2 {
     font-size: 18px;
-    color: rgb(23, 23, 59);
     font-weight: 600;
 }
 
@@ -452,7 +451,7 @@ footer a:visited {
 }
 
 .btn:hover:not([disabled]){
-    background: radial-gradient(#3061a4, #053371);
+    background-color:  #093671;
     color: white;
 }
 
