@@ -193,7 +193,13 @@ html {
     font-weight: 900;
     color: #0f172a;
     text-transform: uppercase;
-    margin-bottom: 95px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 600px) {
+    .logo h1{
+        margin-bottom: 20px;
+    }
 }
 
 main {
@@ -289,7 +295,7 @@ input{
 input::placeholder{
     padding-left: 1%;
 }
-.inputRadio{
+.checkbox{
     width: 90%;
     padding-left: 1%;
 }
@@ -297,10 +303,10 @@ input::placeholder{
     height: auto;
     width: auto;
 }
-.autorização{
+.autorizacao{
     justify-content: left;
     text-align: left;
-    font-size: 13px;
+    font-size: 12px;
     width: 100%;
 }
 .btnform{
@@ -356,10 +362,12 @@ footer a:visited {
     .slidebox{
         height:110px;
         margin-bottom: 10px;
+    }
+    .slider:hover{
         transition-duration: 1s;
     }
-    .slidebox:hover{
-        transform: scale(2.0);
+    .slider:hover{
+        transform: scale(2.0) translate(0px,105px);
     }
 }
 
