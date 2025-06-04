@@ -3,7 +3,6 @@ var show = {showdisplay: true}
 
 // Menu hamburguer
 menuClick.addEventListener('click', function (event){
-    displaymenu = document.getElementById("menulist");
 
     event.preventDefault();
     if (show.showdisplay == true){
