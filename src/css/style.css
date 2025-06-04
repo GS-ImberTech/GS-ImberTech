@@ -359,6 +359,9 @@ footer a:visited {
 }
 
 @media (max-width: 600px) {
+    .slidebtn{
+        display: none;
+    }
     .slidebox{
         height:110px;
         margin-bottom: 10px;
