@@ -334,6 +334,7 @@ footer li {
 
 footer a {
     text-decoration: underline;
+    color: inherit;
 }
 
 footer a:visited {
