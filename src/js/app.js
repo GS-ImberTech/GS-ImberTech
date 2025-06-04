@@ -148,7 +148,7 @@ const questions = [
 
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
-const nextButton = document.getElementById("next-btn");
+const nextButton = document.getElementById("nextbtn");
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -229,8 +229,8 @@ nextButton.addEventListener("click", () => {
 startQuiz();
 
 // Mudança de tema
-const secoes = [textoenchentes,quizborder, enchentes, tecnologia, objetivos, publicoAlvo, beneficios, usoDiario, contato, quiz]
-gradientes = [gradiente0, gradiente, gradiente1, gradiente2, gradiente3, gradiente4, gradiente5, gradiente6, gradiente7, gradiente8]
+const secoes = [textoenchentes, quiz, enchentes, tecnologia, objetivos, publicoAlvo, beneficios, usoDiario, contato, quizborder]
+const gradientes = [gradiente0, gradiente, gradiente1, gradiente2, gradiente3, gradiente4, gradiente5, gradiente6, gradiente7, gradiente8]
 
 let lightTheme = document.getElementById("claro");
 let darkTheme = document.getElementById("escuro");
@@ -244,6 +244,8 @@ greyTheme.addEventListener("click", changeBackgroundGrey);
 function changeBackgroundWhite() {
     document.body.style.backgroundColor = "white";
     document.body.style.color = "black";
+
+    document.getElementById(srclogo.id).src = "src/assets/imgs/logo.png"
 
     document.getElementById(menubtn.id).style.backgroundColor = "#083d83";
     document.getElementById(menulist.id).style.backgroundColor = "#14488b";
@@ -260,9 +262,15 @@ function changeBackgroundWhite() {
     document.getElementById(formSend.id).style.backgroundColor = "#3061a4";
     document.getElementById(formReset.id).style.backgroundColor = "#3061a4";
 
+    document.getElementById(nextbtn.id).style.backgroundImage = 'radial-gradient(rgb(48, 97, 164), rgb(5, 51, 113))';
+    document.getElementById(nextbtn.id).style.color = "white"; 
+
     for (let i = 0; i < secoes.length; i++) {
         document.getElementById(secoes[i].id).style.backgroundColor = 'white';
     }
+    for (let i = 2; i < secoes.length; i++) {
+      document.getElementById(secoes[i].id).style.boxShadow = 'rgba(10, 10, 10, 0.3) 0px 19px 38px, rgba(10, 10, 10, 0.22) 0px 15px 12px';
+    }  
     for (let i=0; i < gradientes.length; i++){
         document.getElementById(gradientes[i].id).style.backgroundImage = 'radial-gradient(rgb(48, 97, 164), rgb(5, 51, 113))';
     }
@@ -272,6 +280,8 @@ function changeBackgroundWhite() {
 function changeBackgroundBlack() {
     document.body.style.backgroundColor = "rgb(4, 12, 22)";
     document.body.style.color = "white";
+
+    document.getElementById(srclogo.id).src = "src/assets/imgs/logo-dark.png"
 
     document.getElementById(menubtn.id).style.backgroundColor = "rgb(0, 25, 58)";
     document.getElementById(menulist.id).style.backgroundColor = "rgb(5, 32, 67)";
@@ -287,18 +297,52 @@ function changeBackgroundBlack() {
     document.getElementById(formSend.id).style.backgroundColor = "rgb(8, 40, 83)";
     document.getElementById(formReset.id).style.backgroundColor = "rgb(8, 40, 83)";
 
- 
+    document.getElementById(nextbtn.id).style.backgroundImage = 'radial-gradient(rgb(8, 40, 83),rgb(0, 25, 58)';
+    document.getElementById(nextbtn.id).style.color = "white"; 
 
     for (let i = 0; i < secoes.length; i++) {
         document.getElementById(secoes[i].id).style.backgroundColor = 'rgb(0, 15, 34)';
     }
+    for (let i = 2; i < secoes.length; i++) {
+      document.getElementById(secoes[i].id).style.boxShadow = 'rgba(3, 3, 3, 0.3) 0px 19px 38px, rgba(3, 3, 3, 0.22) 0px 15px 12px';
+    }  
     for (let i=0; i < gradientes.length; i++){
         document.getElementById(gradientes[i].id).style.backgroundImage = 'radial-gradient(rgb(8, 40, 83),rgb(0, 25, 58)';
     }
 }
 
 function changeBackgroundGrey() {
-    document.body.style.backgroundColor = "grey";
+    document.body.style.backgroundColor = "white";
+    document.body.style.color = "white";
+
+    document.getElementById(srclogo.id).src = "src/assets/imgs/logo-allblack.png"
+
+    document.getElementById(menubtn.id).style.backgroundColor = "rgb(0, 0, 0)";
+    document.getElementById(menulist.id).style.backgroundColor = "rgb(0, 0, 0)";
+    document.getElementById(menulist.id).style.borderColor = "rgb(255, 255, 255)";
+
+    document.getElementById(h1inicio.id).style.color = "black";
+
+    document.getElementById(question.id).style.color = "white";
+    document.getElementById(quiz.id).style.color = "rgb(0, 0, 0)";
+
+    document.getElementById(btnPrev.id).style.backgroundColor = "rgb(0, 0, 0)";
+    document.getElementById(btnNext.id).style.backgroundColor = "rgb(0, 0, 0)";
+
+    document.getElementById(formSend.id).style.backgroundColor = "rgb(0, 0, 0)";
+    document.getElementById(formReset.id).style.backgroundColor = "rgb(0, 0, 0)";
+
+    document.getElementById(nextbtn.id).style.backgroundImage = 'radial-gradient(rgb(255, 255, 255),rgb(255, 251, 251)';
+    document.getElementById(nextbtn.id).style.color = "black"; 
+
+
+    for (let i = 0; i < secoes.length; i++) {
+        document.getElementById(secoes[i].id).style.backgroundColor = 'rgb(0, 0, 0)';
+        document.getElementById(secoes[i].id).style.boxShadow = 'none';
+    }
+    for (let i=0; i < gradientes.length; i++){
+        document.getElementById(gradientes[i].id).style.backgroundImage = 'radial-gradient(rgb(0, 0, 0),rgb(0, 0, 0)';
+    }
 }
 
 
