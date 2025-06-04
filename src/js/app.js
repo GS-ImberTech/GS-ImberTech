@@ -229,7 +229,7 @@ startQuiz();
 
 // Mudança de tema
 const secoes = [textoenchentes, quiz, enchentes, tecnologia, objetivos, publicoAlvo, beneficios, usoDiario, contato, quizborder]
-const gradientes = [gradiente0, gradiente, gradiente1, gradiente2, gradiente3, gradiente4, gradiente5, gradiente6, gradiente7, gradiente8]
+const gradientes = [btn1, btn2, gradiente0, gradiente, gradiente1, gradiente2, gradiente3, gradiente4, gradiente5, gradiente6, gradiente7, gradiente8]
 
 let lightTheme = document.getElementById("claro");
 let darkTheme = document.getElementById("escuro");
@@ -260,15 +260,20 @@ function changeBackgroundWhite() {
 
     document.getElementById(formSend.id).style.backgroundColor = "#3061a4";
     document.getElementById(formReset.id).style.backgroundColor = "#3061a4";
+    
 
     document.getElementById(nextbtn.id).style.backgroundImage = 'radial-gradient(rgb(48, 97, 164), rgb(5, 51, 113))';
     document.getElementById(nextbtn.id).style.color = "white"; 
+
+    document.getElementById(btn0.id).style.color = "black";
+    document.getElementById(btn0.id).style.borderColor = "black";
+    document.getElementById(btn0.id).style.backgroundColor = "white";
 
     for (let i = 0; i < secoes.length; i++) {
         document.getElementById(secoes[i].id).style.backgroundColor = 'white';
     }
     for (let i = 2; i < secoes.length; i++) {
-      document.getElementById(secoes[i].id).style.boxShadow = 'rgba(10, 10, 10, 0.3) 0px 19px 38px, rgba(10, 10, 10, 0.22) 0px 15px 12px';
+      document.getElementById(secoes[i].id).style.boxShadow = 'rgba(0, 0, 0, 0.3) 0px -10px 20px,  rgba(0, 0, 0, 0.22) 0px 19px 38px';
     }  
     for (let i=0; i < gradientes.length; i++){
         document.getElementById(gradientes[i].id).style.backgroundImage = 'radial-gradient(rgb(48, 97, 164), rgb(5, 51, 113))';
@@ -298,6 +303,10 @@ function changeBackgroundBlack() {
 
     document.getElementById(nextbtn.id).style.backgroundImage = 'radial-gradient(rgb(8, 40, 83),rgb(0, 25, 58)';
     document.getElementById(nextbtn.id).style.color = "white"; 
+
+    document.getElementById(btn0.id).style.color = "white";
+    document.getElementById(btn0.id).style.borderColor = "black";
+    document.getElementById(btn0.id).style.backgroundColor = "rgb(4, 12, 22)";
 
     for (let i = 0; i < secoes.length; i++) {
         document.getElementById(secoes[i].id).style.backgroundColor = 'rgb(0, 15, 34)';
@@ -333,7 +342,10 @@ function changeBackgroundGrey() {
 
     document.getElementById(nextbtn.id).style.backgroundImage = 'radial-gradient(rgb(255, 255, 255),rgb(255, 251, 251)';
     document.getElementById(nextbtn.id).style.color = "black"; 
-
+    
+    document.getElementById(btn0.id).style.color = "black";
+    document.getElementById(btn0.id).style.borderColor = "black";
+    document.getElementById(btn0.id).style.backgroundColor = "white";
 
     for (let i = 0; i < secoes.length; i++) {
         document.getElementById(secoes[i].id).style.backgroundColor = 'rgb(0, 0, 0)';
