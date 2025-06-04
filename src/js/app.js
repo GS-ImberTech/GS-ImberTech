@@ -345,5 +345,37 @@ function changeBackgroundGrey() {
     }
 }
 
+// Validação campos formulário
+document.getElementById("formInfo").addEventListener("submit" , function(event){
+    let nome = document.getElementById("nome");
+    let email = document.getElementById("email");
+    let telefone = document.getElementById("telefone")
+    let autorização = document.getElementById("autorização")
 
+    if (nome.value == "" && telefone.value == "" && email.value == ""){
+        alert("Preencha todos os campos antes de enviar!")
+        event.preventDefault();
+    } 
 
+    else if (nome.value == "" && telefone.value == "" || nome.value == "" && email.value == "" ||
+        telefone.value == "" && nome.value == "" || telefone.value == "" && email.value == "" ||
+        telefone.value == "" && email.value == "" || nome.value == "" && email.value == ""){
+        alert("Preencha dois campos antes de enviar!")
+        event.preventDefault();
+    } 
+
+    else if (nome.value == ""){
+        alert("Preencha o campo 'nome'!")
+        event.preventDefault();}
+    else if (telefone.value == ""){
+        alert("Preencha o campo 'telefone'!")
+        event.preventDefault();}
+    else if (email.value == ""){
+        alert("Preencha o campo 'email'!")
+        event.preventDefault();}
+    
+    else if (!(autorização.checked)){
+        alert("Autorize o compartilhamento dos dados!")
+        event.preventDefault()
+    }
+})
