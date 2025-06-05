@@ -215,7 +215,6 @@ filtroClick.addEventListener('click', function (event) {
                 totalpcts++;
             }
         }
-
         let media = 0
         for (let i = 0; i < valores.length; i++) {
             media = media + Number(valores[i]);
@@ -223,7 +222,8 @@ filtroClick.addEventListener('click', function (event) {
         mediaValores = Math.round(media / valores.length);
         console.log(mediaValores)
         pctsistema.innerHTML = `O sistema de drenagem do CEP ${cep} está ${mediaValores}% obstruído`;
-        document.getElementById('pctsistema').style.display = 'flex';
+        if (!isNaN(mediaValores)){
+        document.getElementById('pctsistema').style.display = 'flex';}
     }
     else {
         document.getElementById('pctsistema').style.display = 'none';
