@@ -80,28 +80,33 @@ html {
     padding-bottom: 10px;
 }
 
-.pages{
+.pages {
+    width: auto;
     border: solid 1px;
     border-radius: 5px;
     color: inherit;
     text-decoration: none;
     padding: 10px;
-    border-color:#003366;
+    border-color: #003366;
     background-image: radial-gradient(#3061a4, #053371);
     color: white;
-   
+
 }
-.logo li{
+
+
+.logo li {
     transition-duration: 500ms;
 }
-.logo li:hover:last-child{
-    transform: scale(0.95);
-}
-.logo li:hover:first-child{
+
+.logo li:hover:last-child {
     transform: scale(0.95);
 }
 
-.pagesatual{
+.logo li:hover:nth-child(2) {
+    transform: scale(0.95);
+}
+
+.pagesatual {
     border: solid 1px;
     border-radius: 5px;
     color: inherit;
@@ -109,6 +114,13 @@ html {
     padding: 10px;
     background-color: white;
 }
+
+@media (max-width: 600px) {
+    .pagesatual {
+        font-size: 15px;
+    }
+}
+
 
 #menubtn {
     background-color: #083d83;
@@ -219,17 +231,20 @@ html {
     margin-bottom: 30px;
 }
 
-.logo ul{
+.logo ul {
     display: flex;
     flex-direction: row;
-    gap: 10px;
-    margin-bottom: 50px;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 90px;
+    gap: 20px;
     list-style: none;
 }
 
 @media (max-width: 600px) {
-    .logo h1{
-        margin-bottom: 20px;
+    .logo ul {
+        flex-direction: column;
+        gap: 30px;
     }
 }
 
@@ -243,10 +258,10 @@ main {
 }
 
 @media (max-width: 600px) {
-    main{
-    padding-right: 40px;
-    padding-left: 40px;
-}
+    main {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
 }
 
 .secao {
@@ -257,9 +272,9 @@ main {
     font-size: 20px;
     border-radius: 10px;
     margin-top: 120px;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px -10px 20px,  
-  rgba(0, 0, 0, 0.22) 0px 19px 38px,    
-  rgba(0, 0, 0, 0.22) 0px 15px 12px; 
+    box-shadow: rgba(0, 0, 0, 0.3) 0px -10px 20px,
+        rgba(0, 0, 0, 0.22) 0px 19px 38px,
+        rgba(0, 0, 0, 0.22) 0px 15px 12px;
     transition-duration: 500ms;
 }
 
@@ -268,9 +283,10 @@ iframe {
 }
 
 @media (max-width: 600px) {
-    iframe{
-    width: 300px;
-    height: auto;}
+    iframe {
+        width: 300px;
+        height: auto;
+    }
 }
 
 
@@ -382,7 +398,8 @@ input {
 input::placeholder {
     padding-left: 1%;
 }
-.checkbox{
+
+.checkbox {
     width: 90%;
     padding-left: 1%;
 }
@@ -393,19 +410,20 @@ input::placeholder {
 }
 
 .autorizacao {
-    justify-content:left;
+    justify-content: left;
     align-content: center;
     text-align: left;
     font-size: 11px;
     width: 90%;
 }
 
-fieldset{
+fieldset {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-.checkbox{
+
+.checkbox {
     margin-left: 35px;
 }
 
@@ -461,11 +479,12 @@ footer a:visited {
 }
 
 @media (max-width: 600px) {
-    .slidebtn{
+    .slidebtn {
         display: none;
     }
-    .slidebox{
-        height:130px;
+
+    .slidebox {
+        height: 130px;
         margin-bottom: 10px;
     }
 }
@@ -480,13 +499,15 @@ footer a:visited {
     justify-content: center;
     margin: 5px;
 }
+
 @media (max-width: 600px) {
-   
-    .slider{
+
+    .slider {
         transition-duration: 1s;
     }
-    .slider:hover{
-        transform: scale(2.0) translate(0px,105px);
+
+    .slider:hover {
+        transform: scale(2.0) translate(0px, 105px);
     }
 }
 
@@ -634,4 +655,113 @@ article {
 
 .secao {
     background-color: white;
+}
+
+/* Protótipos */
+.pesquisaform {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.pesquisaform label {
+    font-size: 15px;
+}
+
+.pesquisaform button {
+    width: auto;
+    margin: 5px;
+    text-align: center;
+}
+
+.cep {
+    color: black;
+    width: 25%;
+    height: auto;
+    margin: 5px;
+}
+
+.select {
+    display: flex;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+    margin: 5px;
+}
+
+#containerdados {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dados {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    width: auto;
+    border: solid 1px;
+    border-color: black;
+    font-size: 15px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.dados p {
+    margin: 5px;
+    border-right: solid, 1px;
+    padding: 6px;
+}
+
+.alta {
+    background-color: rgb(156, 0, 0);
+    border-radius: 4px;
+    color: white;
+}
+
+.media {
+    background-color: rgb(255, 252, 96);
+    border-radius: 4px;
+    color: black;
+}
+
+.baixa {
+    background-color: rgb(68, 181, 92);
+    border-radius: 4px;
+    color: black;
+}
+
+.btnpesquisa {
+    border: solid 1px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: white;
+    color: white;
+    font-weight: bolder;
+}
+
+#btnfiltro {
+    background-color: rgb(9, 107, 0);
+}
+
+#btnapagar {
+    background-color: rgb(107, 0, 0);
+}
+
+#btnordem {
+    background-color: rgb(0, 25, 107);
+}
+
+.nenhumdisp {
+    display: none;
+    border: solid, 1px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
 }
