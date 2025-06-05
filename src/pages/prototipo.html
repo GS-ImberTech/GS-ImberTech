@@ -45,7 +45,7 @@
     <div class="displaymenu" id="menulist">
         <ul>
             <li>Seções:</li>
-            <li><a href="#simulador">Simulador do sensor</a></li>
+            <li><a href="#simulador">Simuladores</a></li>
             <li><a href="#pesquisa">Pesquisa de dados</a></li>
             <li id="temas">Temas:</li>
             <li class="temas">
@@ -69,10 +69,15 @@
     <main>
         <article class="secao primeirasecao" id="simulador">
             <h2>
-                <div class="gradient" id="gradiente0"> Simulador do Pottrack</div>
+                <div class="gradient" id="gradiente0"> Simuladores do Pottrack</div>
             </h2>
-            <div class="texto" id="textoenchentes">
-                <p>Teste as funcionalidades do nosso sistema através do Tinkercad!</p>
+            <div class="texto">
+                <p>
+                Para simular o nosso sensor basta acessar o link do projeto no Tinkercad: <br> <a href="https://www.tinkercad.com/things/ifaF2c9QLoC-sensor-de-profundidade-alerta/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard&sharecode=P3jMJxFlV9pO-3SKpiqX_1JeiHSXHl28CcfAyv95snM" target="_blank"> Simular sensores</a>
+                </p>
+                 <p>Na seção abaixo você pode simular uma pesquisa dos dados coletados pelos sensores</p>
+                 <p>Como usar:</p>
+                 <p> A busca por CEP verifica o estado do sistema de drenagem de um CEP ficticío<br>Você também pode filtrar os dados coletados pelo nível de obstrução</p><p> O identificador Nº do bueiro distingue os bueiros de mesmo CEP</p>
             </div>
             </div>
         </article>
@@ -85,25 +90,25 @@
             <form class="pesquisaform">
                 <label for="cep">Busca por CEP:</label>
                 <input type="tel" pattern="\d{8}" list="ceps" name="cep" id="cep" class="cep">
-                    <datalist id="ceps">
-                        <option value="08225300">08225300</option>
-                        <option value="08265601">08265601</option>
-                        <option value="08225310">08225310</option>
-                        <option value="08143977">08143977</option>
-                        <option value="08452110">08452110</option>
-                        <option value="08452129">08452129</option>
-                        <option value="08452123">08452123</option>
-                        <option value="08665480">08665480</option>
-                        <option value="08012345">08012345</option>
-                        <option value="08123456">08123456</option>
-                        <option value="08234567">08234567</option>
-                        <option value="08345678">08345678</option>
-                        <option value="08456789">08456789</option>
-                        <option value="08678901">08678901</option>
-                        <option value="08890123">08890123</option>
-                        <option value="08901234">08901234</option>
-                        <option value="08922998">08922998</option>
-                    </datalist>
+                <datalist id="ceps">
+                    <option value="08225300">08225300</option>
+                    <option value="08265601">08265601</option>
+                    <option value="08225310">08225310</option>
+                    <option value="08143977">08143977</option>
+                    <option value="08452110">08452110</option>
+                    <option value="08452129">08452129</option>
+                    <option value="08452123">08452123</option>
+                    <option value="08665480">08665480</option>
+                    <option value="08012345">08012345</option>
+                    <option value="08123456">08123456</option>
+                    <option value="08234567">08234567</option>
+                    <option value="08345678">08345678</option>
+                    <option value="08456789">08456789</option>
+                    <option value="08678901">08678901</option>
+                    <option value="08890123">08890123</option>
+                    <option value="08901234">08901234</option>
+                    <option value="08922998">08922998</option>
+                </datalist>
                 <div class="select">
                     <label> Filtrar por situação:</label>
                     <select name="categoria" id="categoria">
@@ -118,8 +123,19 @@
                 <button class="btnpesquisa" id="btnapagar"> Apagar Filtros </button>
                 <button class="btnpesquisa" id="btnordem"> Do mais entupido para o mais limpo </button>
             </form>
-             <div class="pctsistema" id="pctsistema">
-                    <p></p>
+            <div class="pctsistema" id="pctsistema">
+                <p></p>
+            </div>
+             <div class="alertas">
+                <div id="alertaalto">
+                    <p>Alto risco de alagamento em caso de chuvas<br>Precisa de limpeza urgente</p>
+                </div>
+                <div id="alertamedio">
+                    <p>Risco considerável de alagamento<br>Precisa de limpeza</p>
+                </div>
+                <div id="alertabaixo">
+                    <p>Baixo risco de alagamento<br>Limpeza periódica em dia</p>
+                </div>
             </div>
             <div class="exibedados" id="containerdados">
                 <div class="dados" id="08225300.2">
@@ -151,6 +167,11 @@
                     <p> CEP: 08225310 </p>
                     <p>Bueiro Nº 1</p>
                     <p class="alta">96% de obstrução</p>
+                </div>
+                <div class="dados" id="08225300">
+                    <p> CEP: 08225300 </p>
+                    <p>Bueiro Nº 2</p>
+                    <p class="alta">95% de obstrução</p>
                 </div>
                 <div class="dados" id="08345678">
                     <p> CEP: 08345678 </p>
@@ -227,7 +248,7 @@
                     <p>Bueiro Nº 2</p>
                     <p class="media">52% de obstrução</p>
                 </div>
-                 <div class="dados" id="08143977.2">
+                <div class="dados" id="08143977.2">
                     <p> CEP: 08143977</p>
                     <p>Bueiro Nº 2</p>
                     <p class="media">51% de obstrução</p>
@@ -242,10 +263,10 @@
                     <p>Bueiro Nº 2</p>
                     <p class="baixa">46% de obstrução</p>
                 </div>
-                  <div class="dados" id="08265601.2">
+                <div class="dados" id="08265601.2">
                     <p> CEP: 08265601 </p>
                     <p>Bueiro Nº 2</p>
-                    <p class="media">45% de obstrução</p>
+                    <p class="baixa">45% de obstrução</p>
                 </div>
                 <div class="dados" id="08890123.2">
                     <p> CEP: 08890123</p>
@@ -311,11 +332,6 @@
                     <p> CEP: 08012345 </p>
                     <p>Bueiro Nº 3</p>
                     <p class="baixa">9% de obstrução</p>
-                </div>
-                <div class="dados" id="08225300">
-                    <p> CEP: 08225300 </p>
-                    <p>Bueiro Nº 2</p>
-                    <p class="baixa">5% de obstrução</p>
                 </div>
                 <div class="dados" id="08234567.3">
                     <p> CEP: 08234567</p>

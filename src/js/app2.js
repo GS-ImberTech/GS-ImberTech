@@ -20,7 +20,7 @@ menuClick.addEventListener('click', function (event) {
 
 // Mudança de tema
 const secoes = [simulador, pesquisa]
-const gradientes = [gradientebtn, gradientebtn1, gradiente, gradiente0, gradiente5, gradiente8]
+const gradientes = [btnfiltro, btnordem, gradientebtn, gradientebtn1, gradiente, gradiente0, gradiente5, gradiente8]
 
 let lightTheme = document.getElementById("claro");
 let darkTheme = document.getElementById("escuro");
@@ -124,7 +124,7 @@ const dados = [
     { id: '08452129.2', categoria: 'media', cepid: '08452129', pct: "52" },
     { id: '08452123', categoria: 'baixa', cepid: '08452123', pct: "16" },
     { id: '08452123.2', categoria: 'media', cepid: '08452123', pct: "89" },
-    { id: '08225300', categoria: 'baixa', cepid: '08225300', pct: "5" },
+    { id: '08225300', categoria: 'alta', cepid: '08225300', pct: "95" },
     { id: '08225310.3', categoria: 'baixa', cepid: '08225310', pct: "2" },
     { id: '08225310.4', categoria: 'baixa', cepid: '08225310', pct: "1" },
     { id: '08665480', categoria: 'alto', cepid: '08665480', pct: "97" },
@@ -165,9 +165,11 @@ const apagarClick = document.getElementById('btnapagar');
 
 function apagar(reset) {
     document.getElementById('nenhumdisp').style.display = 'none';
-    window.onload = function () {
-        document.getElementById('pctsistema').style.display = 'none';
-    };
+    document.getElementById('pctsistema').style.display = 'none';
+    document.getElementById('alertaalto').style.display = 'none';
+    document.getElementById('alertamedio').style.display = 'none';
+    document.getElementById('alertabaixo').style.display = 'none';
+
     for (let i = 0; i < dados.length; i++) {
         document.getElementById(dados[i].id).style.display = 'flex';
     }
@@ -237,6 +239,9 @@ filtroClick.addEventListener('click', function (event) {
     if (total == dados.length) {
         document.getElementById('pctsistema').style.display = 'none';
         document.getElementById('nenhumdisp').style.display = 'flex';
+        document.getElementById('alertaalto').style.display = 'none';
+        document.getElementById('alertamedio').style.display = 'none';
+        document.getElementById('alertabaixo').style.display = 'none';
     }
     else {
         document.getElementById('nenhumdisp').style.display = 'none';
@@ -255,15 +260,29 @@ filtroClick.addEventListener('click', function (event) {
         for (let i = 0; i < valores.length; i++) {
             media = media + Number(valores[i]);
         }
+
         mediaValores = Math.round(media / valores.length);
         console.log(mediaValores)
         pctsistema.innerHTML = `O sistema de drenagem do CEP ${cep} está ${mediaValores}% obstruído`;
+
         if (!isNaN(mediaValores)) {
             document.getElementById('pctsistema').style.display = 'flex';
+            if (mediaValores > 90) {
+                document.getElementById('alertaalto').style.display = 'flex';
+            }
+            else if (mediaValores > 50 && mediaValores < 90) {
+                document.getElementById('alertamedio').style.display = 'flex';
+            }
+            else if (mediaValores > 0) {
+                document.getElementById('alertabaixo').style.display = 'flex';
+            }
         }
     }
     else {
         document.getElementById('pctsistema').style.display = 'none';
+        document.getElementById('alertaalto').style.display = 'none';
+        document.getElementById('alertamedio').style.display = 'none';
+        document.getElementById('alertabaixo').style.display = 'none';
     }
 
 })

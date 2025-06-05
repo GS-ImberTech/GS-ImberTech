@@ -364,29 +364,28 @@ document.getElementById("formInfo").addEventListener("submit" , function(event){
     let autorização = document.getElementById("autorização")
 
     if (nome.value == "" && telefone.value == "" && email.value == ""){
-        alert("Preencha todos os campos antes de enviar!")
+        alert("Preencha todos os campos para registrar interesse")
         event.preventDefault();
     } 
 
     else if (nome.value == "" && telefone.value == "" || nome.value == "" && email.value == "" ||
         telefone.value == "" && nome.value == "" || telefone.value == "" && email.value == "" ||
         telefone.value == "" && email.value == "" || nome.value == "" && email.value == ""){
-        alert("Preencha dois campos antes de enviar!")
+        alert("Preencha os dois campos vazios para registrar interesse")
         event.preventDefault();
     } 
 
     else if (nome.value == ""){
-        alert("Preencha o campo 'nome'!")
+        alert("Para registrar interesse é necessário informar seu nome")
         event.preventDefault();}
     else if (telefone.value == ""){
-        alert("Preencha o campo 'telefone'!")
+        alert("Para registrar interesse é necessário informar um telefone para contato")
         event.preventDefault();}
     else if (email.value == ""){
-        alert("Preencha o campo 'email'!")
+        alert("Para registrar interesse é necessário informar um e-mail para contato")
         event.preventDefault();}
-    
     else if (!(autorização.checked)){
-        alert("Autorize o compartilhamento dos dados!")
+        alert("Para registrar interesse é necessário autorizar o compartilhamento dos dados")
         event.preventDefault()
     }
 })
