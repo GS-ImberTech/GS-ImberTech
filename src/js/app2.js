@@ -1,3 +1,5 @@
+
+
 const menuClick = document.getElementById("menubtn");
 var show = { showdisplay: true }
 
@@ -112,21 +114,24 @@ function changeBackgroundGrey() {
 const dados = [
     { id: '08225300.2', categoria: 'alto', cepid: '08225300', pct: "99" },
     { id: '08265601', categoria: 'alto', cepid: '08265601', pct: "98" },
+    { id: '08265601.2', categoria: 'baixa', cepid: '08265601', pct: "45" },
     { id: '08225310', categoria: 'alto', cepid: '08225310', pct: "96" },
     { id: '08225310.2', categoria: 'alto', cepid: '08225310', pct: "92" },
     { id: '08143977', categoria: 'media', cepid: '08143977', pct: "68" },
+    { id: '08143977.2', categoria: 'media', cepid: '08143977', pct: "51" },
     { id: '08452110', categoria: 'media', cepid: '08452110', pct: "57" },
     { id: '08452129', categoria: 'media', cepid: '08452129', pct: "55" },
     { id: '08452129.2', categoria: 'media', cepid: '08452129', pct: "52" },
     { id: '08452123', categoria: 'baixa', cepid: '08452123', pct: "16" },
+    { id: '08452123.2', categoria: 'media', cepid: '08452123', pct: "89" },
     { id: '08225300', categoria: 'baixa', cepid: '08225300', pct: "5" },
     { id: '08225310.3', categoria: 'baixa', cepid: '08225310', pct: "2" },
     { id: '08225310.4', categoria: 'baixa', cepid: '08225310', pct: "1" },
-    { id: '08665480', categoria: 'alta', cepid: '08665480', pct: "97" },
+    { id: '08665480', categoria: 'alto', cepid: '08665480', pct: "97" },
     { id: '08665480.2', categoria: 'media', cepid: '08665480', pct: "60" },
     { id: '08665480.3', categoria: 'media', cepid: '08665480', pct: "51" },
     { id: '08665480.4', categoria: 'baixa', cepid: '08665480', pct: "13" },
-    { id: '08012345', categoria: 'alta', cepid: '08012345', pct: "98" },
+    { id: '08012345', categoria: 'alto', cepid: '08012345', pct: "98" },
     { id: '08012345.2', categoria: 'baixa', cepid: '08012345', pct: "37" },
     { id: '08012345.3', categoria: 'baixa', cepid: '08012345', pct: "9" },
     { id: '08123456', categoria: 'media', cepid: '08123456', pct: "76" },
@@ -135,7 +140,7 @@ const dados = [
     { id: '08234567', categoria: 'media', cepid: '08234567', pct: "54" },
     { id: '08234567.2', categoria: 'baixa', cepid: '08234567', pct: "40" },
     { id: '08234567.3', categoria: 'baixa', cepid: '08234567', pct: "4" },
-    { id: '08345678', categoria: 'alta', cepid: '08345678', pct: "95" },
+    { id: '08345678', categoria: 'alto', cepid: '08345678', pct: "95" },
     { id: '08345678.2', categoria: 'baixa', cepid: '08345678', pct: "46" },
     { id: '08345678.3', categoria: 'baixa', cepid: '08345678', pct: "10" },
     { id: '08345678.4', categoria: 'baixa', cepid: '08345678', pct: "2" },
@@ -147,10 +152,10 @@ const dados = [
     { id: '08678901.3', categoria: 'baixa', cepid: '08678901', pct: "1" },
     { id: '08890123', categoria: 'media', cepid: '08890123', pct: "65" },
     { id: '08890123.2', categoria: 'baixa', cepid: '08890123', pct: "44" },
-    { id: '08901234', categoria: 'alta', cepid: '08901234', pct: "99" },
+    { id: '08901234', categoria: 'alto', cepid: '08901234', pct: "99" },
     { id: '08901234.2', categoria: 'baixa', cepid: '08901234', pct: "15" },
     { id: '08922998', categoria: 'media', cepid: '08922998', pct: "63" },
-    { id: '08922998', categoria: 'media', cepid: '08922998', pct: "39" },
+    { id: '08922998.2', categoria: 'media', cepid: '08922998', pct: "39" }
 ];
 
 //Pesquisa de dados
@@ -160,8 +165,9 @@ const apagarClick = document.getElementById('btnapagar');
 
 function apagar(reset) {
     document.getElementById('nenhumdisp').style.display = 'none';
-    document.getElementById('pctsistema').style.display = 'none';
-
+    window.onload = function () {
+        document.getElementById('pctsistema').style.display = 'none';
+    };
     for (let i = 0; i < dados.length; i++) {
         document.getElementById(dados[i].id).style.display = 'flex';
     }
@@ -252,13 +258,14 @@ filtroClick.addEventListener('click', function (event) {
         mediaValores = Math.round(media / valores.length);
         console.log(mediaValores)
         pctsistema.innerHTML = `O sistema de drenagem do CEP ${cep} está ${mediaValores}% obstruído`;
-        if (!isNaN(mediaValores)){
-        document.getElementById('pctsistema').style.display = 'flex';}
+        if (!isNaN(mediaValores)) {
+            document.getElementById('pctsistema').style.display = 'flex';
+        }
     }
     else {
         document.getElementById('pctsistema').style.display = 'none';
     }
-   
+
 })
 
 var ordenar = { inverte: true }
