@@ -61,7 +61,7 @@
         <h1 id="h1inicio">Decisões inteligentes começam com dados precisos</h1>
         <ul>
             <li><a id="gradientebtn" class="pages" href="../../index.html"> Conheça nosso projeto </a></li>
-                <li><a id="gradientbtn0" class="pagesatual"> Visite nossos protótipos</a></li>
+            <li><a id="gradientbtn0" class="pagesatual"> Visite nossos protótipos</a></li>
             <li><a id="gradientebtn1" class="pages" href="https://www.youtube.com/channel/UCRO7Y6jcHqj5IsizeSQ0E-g"
                     target="_blank"> Nosso youtube </a></li>
         </ul>
@@ -84,8 +84,7 @@
             </h2>
             <form class="pesquisaform">
                 <label for="cep">Busca por CEP:</label>
-                <input type="number" list="ceps" name="cep" id="cep" class="cep">
-
+                <input type="tel" pattern="\d{8}" list="ceps" name="cep" id="cep" class="cep">
                 <datalist id="ceps">
                     <option value="08225300">08225300</option>
                     <option value="08265601">08265601</option>
@@ -98,7 +97,8 @@
                 <div class="select">
                     <label> Filtrar por situação:</label>
                     <select name="categoria" id="categoria">
-                        <option value="" disabled hidden selected>Selecione</option>
+                        <option value="todas" disabled hidden selected>Selecione</option>
+                        <option value="todas">Todas</option>
                         <option value="cat1">Baixo risco</option>
                         <option value="cat2">Parcialmente Obstruído</option>
                         <option value="cat3">Completamente Obstruído</option>
@@ -108,6 +108,9 @@
                 <button class="btnpesquisa" id="btnapagar"> Apagar Filtros </button>
                 <button class="btnpesquisa" id="btnordem"> Do mais entupido para o mais limpo </button>
             </form>
+             <div class="pctsistema" id="pctsistema">
+                    <p></p>
+            </div>
             <div class="exibedados" id="containerdados">
                 <div class="dados" id="08225300.2">
                     <p> CEP: 08225300 </p>
@@ -166,8 +169,9 @@
                 </div>
             </div>
             <div class="nenhumdisp" id="nenhumdisp">
-                    <p> Ainda não registramos nenhum dado que corresponda aos filtros selecionados...<br> Registre seu interesse e nos informe sobre o ocorrido quando entrarmos em contato </p>
-                </div>
+                <p> Ainda não registramos nenhum dado que corresponda aos filtros selecionados...<br> Registre seu
+                    interesse e nos informe sobre o ocorrido quando entrarmos em contato </p>
+            </div>
         </article>
     </main>
 
@@ -181,4 +185,5 @@
     </footer>
     <script src="../js/app2.js"></script>
 </body>
+
 </html>

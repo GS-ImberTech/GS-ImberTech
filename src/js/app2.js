@@ -110,50 +110,65 @@ function changeBackgroundGrey() {
 
 }
 const dados = [
-    { id: '08225300.2', categoria: 'alto', cepid: '08225300' },
-    { id: '08265601', categoria: 'alto', cepid: '08265601' },
-    { id: '08225310', categoria: 'alto', cepid: '08225310' },
-    { id: '08225310.2', categoria: 'alto', cepid: '08225310' },
-    { id: '08143977', categoria: 'media', cepid: '08143977' },
-    { id: '08452110', categoria: 'media', cepid: '08452110' },
-    { id: '08452129', categoria: 'media', cepid: '08452129' },
-    { id: '08452129.2', categoria: 'media', cepid: '08452129' },
-    { id: '08452123', categoria: 'baixa', cepid: '08452123' },
-    { id: '08225300', categoria: 'baixa', cepid: '08225300' },
-    { id: '08225310.3', categoria: 'baixa', cepid: '08225310' }
+    { id: '08225300.2', categoria: 'alto', cepid: '08225300', pct: "99" },
+    { id: '08265601', categoria: 'alto', cepid: '08265601', pct: "98" },
+    { id: '08225310', categoria: 'alto', cepid: '08225310', pct: "96" },
+    { id: '08225310.2', categoria: 'alto', cepid: '08225310', pct: "92" },
+    { id: '08143977', categoria: 'media', cepid: '08143977', pct: "68" },
+    { id: '08452110', categoria: 'media', cepid: '08452110', pct: "57" },
+    { id: '08452129', categoria: 'media', cepid: '08452129', pct: "55" },
+    { id: '08452129.2', categoria: 'media', cepid: '08452129', pct: "52" },
+    { id: '08452123', categoria: 'baixa', cepid: '08452123', pct: "16" },
+    { id: '08225300', categoria: 'baixa', cepid: '08225300', pct: "5" },
+    { id: '08225310.3', categoria: 'baixa', cepid: '08225310', pct: "2" }
 ];
 
+//Pesquisa de dados
 
 const filtroClick = document.getElementById('btnfiltro');
 const apagarClick = document.getElementById('btnapagar');
 
-apagarClick.addEventListener('click', function(event){
-    event.preventDefault();
-    document.querySelector('form').reset();
+function apagar(reset) {
+    document.getElementById('nenhumdisp').style.display = 'none';
+    document.getElementById('pctsistema').style.display = 'none';
 
-    document.getElementById('nenhumdisp').style.display = 'none'; 
     for (let i = 0; i < dados.length; i++) {
         document.getElementById(dados[i].id).style.display = 'flex';
     }
+
+    if (reset == 'sim') { document.querySelector('form').reset(); }
+}
+
+apagarClick.addEventListener('click', function (event) {
+    event.preventDefault();
+    apagar('sim');
 })
 
 filtroClick.addEventListener('click', function (event) {
 
     const cat = document.getElementById('categoria').value;
     const cep = document.getElementById('cep').value;
+
     event.preventDefault();
+    apagar();
 
-    if (cep.length != 8 && cep != ''){
-        alert( `O CEP "${cep}" não é válido\nPor gentileza, insira um CEP composto por 8 digítos numéricos`)
+    //Busca por CEP
+    if (cep.length != 8 && cep != '') {
+        alert(`O CEP "${cep}" não é válido\nPor gentileza, insira um CEP composto por 8 digítos numéricos`)
     }
-    if(cep.length == 8){
+    if (cep.length == 8) {
         for (let i = 0; i < dados.length; i++) {
-            document.getElementById(dados[i].id).style.display = 'flex';}
+            document.getElementById(dados[i].id).style.display = 'flex';
+        }
 
         for (let i = 0; i < dados.length; i++) {
-            if(dados[i].cepid != cep){
-             document.getElementById(dados[i].id).style.display = 'none';}}
+            if (dados[i].cepid != cep) {
+                document.getElementById(dados[i].id).style.display = 'none';
+            }
+        }
     }
+
+    //Busca por situação
     if (cat == 'cat1') {
         for (let i = 0; i < dados.length; i++) {
             if (dados[i].categoria != 'baixa') {
@@ -175,6 +190,8 @@ filtroClick.addEventListener('click', function (event) {
             }
         }
     }
+
+    //Contagem de itens ocultados para exibição de mensagem
     let total = 0;
     for (let i = 0; i < dados.length; i++) {
         if (document.getElementById(dados[i].id).style.display == 'none') {
@@ -182,18 +199,43 @@ filtroClick.addEventListener('click', function (event) {
         }
     }
     if (total == dados.length) {
-        document.getElementById('nenhumdisp').style.display = 'flex'; 
-    } else {
-        document.getElementById('nenhumdisp').style.display = 'none'; 
+        document.getElementById('pctsistema').style.display = 'none';
+        document.getElementById('nenhumdisp').style.display = 'flex';
+    }
+    else {
+        document.getElementById('nenhumdisp').style.display = 'none';
     }
 
+    if ((cep.length == 8) && (cat == 'todas')) {
+        const valores = []
+        let totalpcts = 0;
+        for (let i = 0; i < dados.length; i++) {
+            if (document.getElementById(dados[i].id).style.display == 'flex') {
+                valores.push(dados[i].pct)
+                totalpcts++;
+            }
+        }
+        let media = 0
+        for (let i = 0; i < valores.length; i++) {
+            media = media + Number(valores[i]);
+        }
+        mediaValores = Math.round(media / valores.length);
+        console.log(mediaValores)
+        pctsistema.innerHTML = `O sistema de drenagem do CEP ${cep} está ${mediaValores}% obstruído`;
+        if (!isNaN(mediaValores)){
+        document.getElementById('pctsistema').style.display = 'flex';}
+    }
+    else {
+        document.getElementById('pctsistema').style.display = 'none';
+    }
+   
 })
 
-var ordenar = {inverte: true} 
+var ordenar = { inverte: true }
 
 precoClick = document.getElementById('btnordem');
 
-precoClick.addEventListener('click', function(event) {
+precoClick.addEventListener('click', function (event) {
     event.preventDefault();
 
     const btnordem = document.getElementById('btnordem');
@@ -202,7 +244,7 @@ precoClick.addEventListener('click', function(event) {
         document.getElementById('containerdados').style.flexDirection = 'column-reverse';
         btnordem.innerHTML = "Do mais limpo para o mais entupido ";
         ordenar.inverte = false;
-    } 
+    }
     else {
         document.getElementById('containerdados').style.flexDirection = 'column';
         btnordem.innerHTML = "Do mais entupido para o mais limpo";

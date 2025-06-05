@@ -760,8 +760,33 @@ article {
 
 .nenhumdisp {
     display: none;
+    font-size: 15px;
     border: solid, 1px;
     margin-top: 20px;
     margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
     padding: 10px;
 }
+
+.pctsistema {
+    display: none;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    width: 100%;
+    justify-content: center;
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+}
+@media (max-width: 600px) {
+
+    .pctsistema {
+        font-size: 15px;
+    }
+}
+
+
