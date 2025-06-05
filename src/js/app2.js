@@ -128,26 +128,31 @@ const dados = [
 const filtroClick = document.getElementById('btnfiltro');
 const apagarClick = document.getElementById('btnapagar');
 
-function apagar(event) {
-    document.querySelector('form').reset();
+function apagar(reset) {
     document.getElementById('nenhumdisp').style.display = 'none';
+    document.getElementById('pctsistema').style.display = 'none';
+
     for (let i = 0; i < dados.length; i++) {
         document.getElementById(dados[i].id).style.display = 'flex';
     }
+
+    if (reset == 'sim') { document.querySelector('form').reset(); }
 }
 
 apagarClick.addEventListener('click', function (event) {
     event.preventDefault();
-    apagar(event);
+    apagar('sim');
 })
 
 filtroClick.addEventListener('click', function (event) {
 
     const cat = document.getElementById('categoria').value;
     const cep = document.getElementById('cep').value;
+
     event.preventDefault();
+    apagar();
 
-
+    //Busca por CEP
     if (cep.length != 8 && cep != '') {
         alert(`O CEP "${cep}" não é válido\nPor gentileza, insira um CEP composto por 8 digítos numéricos`)
     }
@@ -162,6 +167,8 @@ filtroClick.addEventListener('click', function (event) {
             }
         }
     }
+
+    //Busca por situação
     if (cat == 'cat1') {
         for (let i = 0; i < dados.length; i++) {
             if (dados[i].categoria != 'baixa') {
@@ -184,14 +191,22 @@ filtroClick.addEventListener('click', function (event) {
         }
     }
 
+    //Contagem de itens ocultados para exibição de mensagem
     let total = 0;
     for (let i = 0; i < dados.length; i++) {
         if (document.getElementById(dados[i].id).style.display == 'none') {
             total++;
         }
     }
+    if (total == dados.length) {
+        document.getElementById('pctsistema').style.display = 'none';
+        document.getElementById('nenhumdisp').style.display = 'flex';
+    }
+    else {
+        document.getElementById('nenhumdisp').style.display = 'none';
+    }
 
-    if (cep.length == 8) {
+    if ((cep.length == 8) && (cat == '')) {
         const valores = []
         let totalpcts = 0;
         for (let i = 0; i < dados.length; i++) {
@@ -209,17 +224,11 @@ filtroClick.addEventListener('click', function (event) {
         console.log(mediaValores)
         pctsistema.innerHTML = `O sistema de drenagem do CEP ${cep} está ${mediaValores}% obstruído`;
         document.getElementById('pctsistema').style.display = 'flex';
-
-
-
-        
     }
-    if (total == dados.length) {
-            document.getElementById('nenhumdisp').style.display = 'flex';
-        }
-        else {
-            // document.getElementById('nenhumdisp').style.display = 'none';
-        }
+    else {
+        document.getElementById('pctsistema').style.display = 'none';
+    }
+   
 })
 
 var ordenar = { inverte: true }

@@ -782,4 +782,11 @@ article {
     border-top: solid 1px;
     border-bottom: solid 1px;
 }
+@media (max-width: 600px) {
+
+    .pctsistema {
+        font-size: 15px;
+    }
+}
+
 
