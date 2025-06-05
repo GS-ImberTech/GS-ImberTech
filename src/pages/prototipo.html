@@ -14,11 +14,11 @@
         }
 
         .logo li:hover:nth-child(2) {
-            transform: scale(0.95);
+            transform: none;
         }
 
         .logo li:hover:first-child {
-            transform: none;
+            transform: scale(0.95);
         }
     </style>
 </head>
@@ -60,18 +60,19 @@
         <img id="srclogo" src="../assets/imgs/logo.png" alt="Logo da Imber Tech">
         <h1 id="h1inicio">Decisões inteligentes começam com dados precisos</h1>
         <ul>
-            <li><a id="gradientbtn0"class="pagesatual"> Visite nossos protótipos</a></li>
-            <li><a id ="gradientebtn" class="pages" href="../../index.html"> Conheça nosso projeto </a></li>
-            <li><a id ="gradientebtn1" class="pages" href="https://www.youtube.com/channel/UCRO7Y6jcHqj5IsizeSQ0E-g" target="_blank"> NossoYoutube </a></li>
+            <li><a id="gradientebtn" class="pages" href="../../index.html"> Conheça nosso projeto </a></li>
+                <li><a id="gradientbtn0" class="pagesatual"> Visite nossos protótipos</a></li>
+            <li><a id="gradientebtn1" class="pages" href="https://www.youtube.com/channel/UCRO7Y6jcHqj5IsizeSQ0E-g"
+                    target="_blank"> Nosso youtube </a></li>
         </ul>
     </header>
-       <main>
+    <main>
         <article class="secao primeirasecao" id="simulador">
             <h2>
                 <div class="gradient" id="gradiente0"> Simulador do Pottrack</div>
             </h2>
             <div class="texto" id="textoenchentes">
-                <p>Teste as funcionalidades do nosso sistema, através do Tinkercad!</p>
+                <p>Teste as funcionalidades do nosso sistema através do Tinkercad!</p>
             </div>
             </div>
         </article>
@@ -81,9 +82,92 @@
             <h2>
                 <div class="gradient" id="gradiente5">Pesquisa de dados</div>
             </h2>
-            <div class="texto">
-                <p>Simule uma pesquisa dos dados coletados pelo nosso sistema</p>
+            <form class="pesquisaform">
+                <label for="cep">Busca por CEP:</label>
+                <input type="number" list="ceps" name="cep" id="cep" class="cep">
+
+                <datalist id="ceps">
+                    <option value="08225300">08225300</option>
+                    <option value="08265601">08265601</option>
+                    <option value="08225310">08225310</option>
+                    <option value="08143977">08143977</option>
+                    <option value="08452110">08452110</option>
+                    <option value="08452129">08452129</option>
+                    <option value="08452123">08452123</option>
+                </datalist>
+                <div class="select">
+                    <label> Filtrar por situação:</label>
+                    <select name="categoria" id="categoria">
+                        <option value="" disabled hidden selected>Selecione</option>
+                        <option value="cat1">Baixo risco</option>
+                        <option value="cat2">Parcialmente Obstruído</option>
+                        <option value="cat3">Completamente Obstruído</option>
+                    </select>
+                </div>
+                <button class="btnpesquisa" id="btnfiltro"> Filtrar </button>
+                <button class="btnpesquisa" id="btnapagar"> Apagar Filtros </button>
+                <button class="btnpesquisa" id="btnordem"> Do mais entupido para o mais limpo </button>
+            </form>
+            <div class="exibedados" id="containerdados">
+                <div class="dados" id="08225300.2">
+                    <p> CEP: 08225300 </p>
+                    <p>Bueiro Nº 1</p>
+                    <p class="alta">99% de obstrução</p>
+                </div>
+                <div class="dados" id="08265601">
+                    <p> CEP: 08265601 </p>
+                    <p>Bueiro Nº 1</p>
+                    <p class="alta">98% de obstrução</p>
+                </div>
+                <div class="dados" id="08225310">
+                    <p> CEP: 08225310 </p>
+                    <p>Bueiro Nº 1</p>
+                    <p class="alta">96% de obstrução</p>
+                </div>
+                <div class="dados" id="08225310.2">
+                    <p> CEP: 08225310 </p>
+                    <p>Bueiro Nº 2</p>
+                    <p class="alta">92% de obstrução</p>
+                </div>
+                <div class="dados" id="08143977">
+                    <p> CEP: 08143977</p>
+                    <p>Bueiro Nº 1</p>
+                    <p class="media">68% de obstrução</p>
+                </div>
+                <div class="dados" id="08452110">
+                    <p> CEP: 08452110</p>
+                    <p>Bueiro Nº 1</p>
+                    <p class="media">57% de obstrução</p>
+                </div>
+                <div class="dados" id="08452129">
+                    <p> CEP: 08452129</p>
+                    <p>Bueiro Nº 1</p>
+                    <p class="media">55% de obstrução</p>
+                </div>
+                <div class="dados" id="08452129.2">
+                    <p> CEP: 08452129</p>
+                    <p>Bueiro Nº 2</p>
+                    <p class="media">52% de obstrução</p>
+                </div>
+                <div class="dados" id="08452123">
+                    <p> CEP: 08452123</p>
+                    <p>Bueiro Nº 1</p>
+                    <p class="baixa">16% de obstrução</p>
+                </div>
+                <div class="dados" id="08225300">
+                    <p> CEP: 08225300 </p>
+                    <p>Bueiro Nº 2</p>
+                    <p class="baixa">5% de obstrução</p>
+                </div>
+                <div class="dados" id="08225310.3">
+                    <p> CEP: 08225310 </p>
+                    <p>Bueiro Nº 3</p>
+                    <p class="baixa">2% de obstrução</p>
+                </div>
             </div>
+            <div class="nenhumdisp" id="nenhumdisp">
+                    <p> Ainda não registramos nenhum dado que corresponda aos filtros selecionados...<br> Registre seu interesse e nos informe sobre o ocorrido quando entrarmos em contato </p>
+                </div>
         </article>
     </main>
 
@@ -97,5 +181,4 @@
     </footer>
     <script src="../js/app2.js"></script>
 </body>
-
 </html>
