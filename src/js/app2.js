@@ -155,7 +155,13 @@ const dados = [
     { id: '08901234', categoria: 'alto', cepid: '08901234', pct: "99" },
     { id: '08901234.2', categoria: 'baixa', cepid: '08901234', pct: "15" },
     { id: '08922998', categoria: 'media', cepid: '08922998', pct: "63" },
-    { id: '08922998.2', categoria: 'media', cepid: '08922998', pct: "39" }
+    { id: '08922998.2', categoria: 'media', cepid: '08922998', pct: "39" },
+    { id: '08098765', categoria: 'alta', cepid: '08098765', pct: "99" },
+    { id: '08098765.2', categoria: 'alta', cepid: '08098765', pct: "95" },
+    { id: '08098765.3', categoria: 'alta', cepid: '08098765', pct: "90" },
+    { id: '08187654', categoria: 'baixa', cepid: '08187654', pct: "30" },
+    { id: '08187654.2', categoria: 'baixa', cepid: '08187654', pct: "14" },
+    { id: '08187654.3', categoria: 'baixa', cepid: '08187654', pct: "6" },
 ];
 
 //Pesquisa de dados
