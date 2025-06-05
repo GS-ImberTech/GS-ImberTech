@@ -206,7 +206,7 @@ filtroClick.addEventListener('click', function (event) {
         document.getElementById('nenhumdisp').style.display = 'none';
     }
 
-    if ((cep.length == 8) && (cat == '')) {
+    if ((cep.length == 8) && (cat == 'todas')) {
         const valores = []
         let totalpcts = 0;
         for (let i = 0; i < dados.length; i++) {
