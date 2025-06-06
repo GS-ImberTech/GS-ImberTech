@@ -321,7 +321,7 @@ iframe {
 
 
 .primeirasecao {
-    margin-top: 0px;
+    margin: 0 !important;
 }
 
 .texto {
@@ -429,6 +429,11 @@ input::placeholder {
 
 .autorizacao {
     font-size: 13px;
+}
+@media (max-width:600px){
+    .autorizacao {
+    font-size: 11px;
+}
 }
 
 .btnform {
@@ -652,7 +657,11 @@ article {
     justify-content: center;
     align-content: center;
     text-align: center;
-    width: auto;
+    width: 100%;
+}
+
+.pesquisaform input{
+    width: 27%;
 }
 
 .pesquisaform label {
@@ -678,6 +687,13 @@ article {
     align-content: center;
     justify-content: center;
     margin: 5px;
+}
+
+@media (max-width: 600px) {
+    
+    .select select{
+    font-size: 12px;
+    }
 }
 
 #containerdados {
