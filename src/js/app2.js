@@ -24,12 +24,12 @@ const gradientes = [btnfiltro, btnordem, gradientebtn, gradientebtn1, gradiente,
 
 let lightTheme = document.getElementById("claro");
 let darkTheme = document.getElementById("escuro");
-let greyTheme = document.getElementById("cinza");
+let allBlackTheme = document.getElementById("preto");
 
 
 lightTheme.addEventListener("click", changeBackgroundWhite);
 darkTheme.addEventListener("click", changeBackgroundBlack);
-greyTheme.addEventListener("click", changeBackgroundGrey);
+allBlackTheme.addEventListener("click", changeBackgroundallBlack);
 
 function changeBackgroundWhite() {
     document.body.style.backgroundColor = "white";
@@ -86,7 +86,7 @@ function changeBackgroundBlack() {
     }
 }
 
-function changeBackgroundGrey() {
+function changeBackgroundallBlack() {
     document.body.style.backgroundColor = "white";
     document.body.style.color = "white";
 
