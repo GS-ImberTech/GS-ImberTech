@@ -77,12 +77,13 @@
                     <a href="https://www.tinkercad.com/things/ifaF2c9QLoC-sensor-de-profundidade-alerta/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard&sharecode=P3jMJxFlV9pO-3SKpiqX_1JeiHSXHl28CcfAyv95snM"
                     target="_blank"> Simular sensor</a>
 
-                <p class="endbtntinker"> Como usar a simulação da Pesquisa de Dados Coletados:
+                <p class="endbtntinker"> Como simular a Pesquisa de Dados Coletados:
                 </p>
                 <ul>
-                    <li> Busca por CEP: verifica o estado do sistema de drenagem de um CEP ficticio</li>
-                    <li>Filtro: use para separar os bueiros por nível de obstrução</li>
-                    <li>  Nº do bueiro: distingue os bueiros de mesmo CEP</li>
+                    <li>Use a Busca por CEP com o filtro "Todas" para visualizar todos os dados sobre um CEP fictício</li>
+                    <li>O Nº do bueiro distingue os bueiros localizados no mesmo CEP.</li>
+                    <li>Um sistema de drenagem é o conjunto de bueiros do mesmo CEP</li>
+                    <li>Use o filtro para separar os bueiros por nível de obstrução </li>
                 </ul>
             </div>
         </article>
@@ -117,18 +118,18 @@
                     <option value="08187654">08187654</option>
                 </datalist>
                 <div class="select">
-                    <label> Filtrar por situação:</label>
+                    <label> Filtrar por obstrução:</label>
                     <select name="categoria" id="categoria">
                         <option value="todas" disabled hidden selected>Selecione</option>
                         <option value="todas">Todas</option>
-                        <option value="cat1">Baixo risco</option>
-                        <option value="cat2">Parcialmente Obstruído</option>
-                        <option value="cat3">Completamente Obstruído</option>
+                        <option value="cat1">Baixa</option>
+                        <option value="cat2">Média</option>
+                        <option value="cat3">Alta</option>
                     </select>
                 </div>
-                <button class="btnpesquisa" id="btnfiltro"> Filtrar </button>
+                <button class="btnpesquisa" id="btnfiltro"> Buscar </button>
                 <button class="btnpesquisa" id="btnapagar"> Apagar Filtros </button>
-                <button class="btnpesquisa" id="btnordem"> Do mais entupido para o mais limpo </button>
+                <button class="btnpesquisa" id="btnordem"> Do mais obstruído para o mais limpo </button>
             </form>
             <div class="pctsistema" id="pctsistema">
                 <p></p>
