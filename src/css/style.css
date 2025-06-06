@@ -334,6 +334,7 @@ iframe {
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 20px;
+    padding-top: 10px;
 }
 
 
@@ -366,6 +367,8 @@ iframe {
 .secao img {
     width: 50%;
     height: auto;
+    border-radius: 5px;
+    
 }
 
 .secao:hover {
@@ -896,4 +899,9 @@ article {
 .endbtntinker{
     margin-top: 30px;
     padding-bottom: 0 !important;
+}
+
+#peopleblue{
+    width: 200px;
+    height: auto
 }

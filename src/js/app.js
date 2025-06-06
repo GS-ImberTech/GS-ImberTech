@@ -233,17 +233,18 @@ const gradientes = [btn1, btn2, gradiente0, gradiente, gradiente1, gradiente2, g
 
 let lightTheme = document.getElementById("claro");
 let darkTheme = document.getElementById("escuro");
-let greyTheme = document.getElementById("cinza");
+let allBlackTheme = document.getElementById("preto");
 
 
 lightTheme.addEventListener("click", changeBackgroundWhite);
 darkTheme.addEventListener("click", changeBackgroundBlack);
-greyTheme.addEventListener("click", changeBackgroundGrey);
+allBlackTheme.addEventListener("click", changeBackgroundallBlack);
 
 function changeBackgroundWhite() {
     document.body.style.backgroundColor = "white";
     document.body.style.color = "black";
 
+    document.getElementById(peopleblue.id).src = "src/assets/imgs/people-blue.png"
     document.getElementById(srclogo.id).src = "src/assets/imgs/logo.png"
 
     document.getElementById(menubtn.id).style.backgroundColor = "#083d83";
@@ -286,6 +287,7 @@ function changeBackgroundBlack() {
     document.body.style.color = "white";
 
     document.getElementById(srclogo.id).src = "src/assets/imgs/logo-dark.png"
+    document.getElementById(peopleblue.id).src = "src/assets/imgs/people-blue.png"
 
     document.getElementById(menubtn.id).style.backgroundColor = "rgb(0, 25, 58)";
     document.getElementById(menulist.id).style.backgroundColor = "rgb(5, 32, 67)";
@@ -319,11 +321,12 @@ function changeBackgroundBlack() {
     }
 }
 
-function changeBackgroundGrey() {
+function changeBackgroundallBlack() {
     document.body.style.backgroundColor = "white";
     document.body.style.color = "white";
 
     document.getElementById(srclogo.id).src = "src/assets/imgs/logo-allblack.png"
+    document.getElementById(peopleblue.id).src = "src/assets/imgs/people-white.png"
 
     document.getElementById(menubtn.id).style.backgroundColor = "rgb(0, 0, 0)";
     document.getElementById(menulist.id).style.backgroundColor = "rgb(0, 0, 0)";
